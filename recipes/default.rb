@@ -10,7 +10,7 @@ when "debian"
     package "ruby"
     package "ruby-dev"
 when "rhel"
-    include_recipe "1.8"
+    include_recipe "ruby::1.8"
 else
     raise "The ruby::default recipe does not support this platform family"
 end

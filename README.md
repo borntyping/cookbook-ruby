@@ -3,9 +3,9 @@ ruby
 
 Installs Ruby packages, either installing a specific version or the most recent version that the operating system provides.
 
-Compatible with the existing [ruby community cookbook](https://github.com/jtimberman/ruby-cookbook), though installs the minimal set of packages for each distribution. This is usually the main ruby package (which should depend on or provide all requirements) and the ruby headers, without any deprecated packages.
+Compatible with the existing [ruby community cookbook](https://github.com/jtimberman/ruby-cookbook), though installs the minimal set of packages for each distribution. On Debian based systems, this is the main ruby package or virtual package (which includes `irb`, `gem`, `ri` and `rdoc`) and the ruby headers. On RHEL based systems, this is the Ruby 1.8.7 packages (including `rubygems`, `ruby-irb`, `ruby-ri` and `ruby-rdoc`).
 
-Tested on CentOS 6.5, Debian 7 and Mint 16. The RHEL and Debian platform families should both be fully supported, though RHEL/CentOS currently do not provide packages for Ruby 1.9.1 or above.
+Tested on CentOS 6.5, Debian 7 and Mint 16. The RHEL and Debian platform families should both be fully supported, with the exception of Ruby 1.9.1 being unavailable on the RHEL platform family.
 
 Usage
 -----
@@ -14,7 +14,7 @@ Add `ruby::default`, `ruby::1.8` or `ruby::1.9.1` to a run list.
 
 The `ruby::default` recipe installs the `ruby` virtual packages on the Debian family, and the `ruby` (1.8.7) packages on CentOS.
 
-As mentioned above, the `ruby::1.9.1` recipe is not availible for the RHEL platform family.
+As mentioned above, the `ruby::1.9.1` recipe is not available for the RHEL platform family.
 
 License
 -------

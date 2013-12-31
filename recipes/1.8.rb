@@ -12,6 +12,10 @@ when "debian"
 when "rhel"
     package "ruby"
     package "ruby-devel"
+    package "ruby-irb"
+    package "ruby-rdoc"
+    package "ruby-ri"
+    package "rubygems"
 else
     raise "The ruby::1.8 recipe does not support this platform family"
 end
